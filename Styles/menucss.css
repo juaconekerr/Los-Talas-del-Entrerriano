@@ -1,0 +1,309 @@
+/* --------------------------------------------- */
+/* Estilos específicos para la página de Menú */
+/* Complementa a indexcss.css */
+/* --------------------------------------------- */
+
+/* Hero del menú */
+.menu-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/menu/hero-menu.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    margin-top: 80px; /* Compensar header fijo */
+}
+
+.menu-hero .hero-content h2 {
+    font-family: var(--title-font);
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+}
+
+.menu-hero .hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Selector de días */
+.day-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.day-tab {
+    padding: var(--space-md) var(--space-xl);
+    background: none;
+    border: none;
+    font-family: var(--text-font);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.day-tab:hover,
+.day-tab.active {
+    color: var(--primary-color);
+}
+
+.day-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.day-selector-mobile {
+    display: none;
+    margin-bottom: var(--space-lg);
+}
+
+.day-dropdown {
+    width: 100%;
+    padding: var(--space-md);
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    font-family: var(--text-font);
+    font-size: 1rem;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+/* Contenido del menú */
+.menu-day {
+    display: none;
+}
+
+.menu-day.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.menu-category {
+    margin-bottom: var(--space-xl);
+}
+
+.category-title {
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.menu-item {
+    display: flex;
+    gap: var(--space-md);
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    width: 120px;
+    min-width: 120px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .item-image img {
+    transform: scale(1.1);
+}
+
+.item-details {
+    padding: var(--space-md) var(--space-md) var(--space-md) 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-name {
+    font-family: var(--title-font);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+}
+
+.item-price {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Sección de especialidades */
+.specials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+}
+
+.special-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.special-card:hover {
+    transform: translateY(-10px);
+}
+
+.special-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.special-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.special-card:hover .special-image img {
+    transform: scale(1.05);
+}
+
+.special-badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.special-content {
+    padding: var(--space-lg);
+}
+
+.special-content h3 {
+    font-family: var(--title-font);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+.special-content p {
+    color: var(--text-light);
+    margin-bottom: var(--space-lg);
+}
+
+.special-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.special-footer .price {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.special-footer .day {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* --------------------------------------------- */
+/* Responsive */
+/* --------------------------------------------- */
+@media (max-width: 768px) {
+    .menu-hero {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .menu-hero .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .menu-hero .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .day-tabs {
+        display: none;
+    }
+    
+    .day-selector-mobile {
+        display: block;
+    }
+    
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .special-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-hero {
+        height: 40vh;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+    }
+    
+    .item-image {
+        width: 100%;
+        height: 150px;
+    }
+    
+    .item-details {
+        padding: var(--space-md);
+    }
+}

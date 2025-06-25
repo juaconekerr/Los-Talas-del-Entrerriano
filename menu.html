@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Esquina del Campo | Nuestro Menú</title>
+    
+    <!-- Fuentes y estilos compartidos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="Styles/indexcss.css"> <!-- Estilos compartidos -->
+    <link rel="stylesheet" href="Styles/menucss.css"> <!-- Estilos específicos del menú -->
+</head>
+<body>
+    <!-- Encabezado (igual al index) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">La Esquina del Campo</h1>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="menu.html" class="nav-link active">Menú</a></li>
+                        <li class="nav-item"><a href="galeria.html" class="nav-link">Galería</a></li>
+                        <li class="nav-item"><a href="eventos.html" class="nav-link">Eventos</a></li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <button class="mobile-menu-btn" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Hero del Menú -->
+    <section class="menu-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Nuestro Menú Semanal</h2>
+                <p>Platos tradicionales preparados con ingredientes frescos de nuestra granja</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Menú por días -->
+    <section class="weekly-menu">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Menú por Días</h2>
+                <p class="section-subtitle">Descubre nuestras especialidades diarias</p>
+            </div>
+            
+            <!-- Selector de días (para móvil) -->
+            <div class="day-selector-mobile">
+                <select id="day-select" class="day-dropdown">
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+            </div>
+            
+            <!-- Pestañas de días (para desktop) -->
+            <div class="day-tabs">
+                <button class="day-tab active" data-day="lunes">Lunes</button>
+                <button class="day-tab" data-day="martes">Martes</button>
+                <button class="day-tab" data-day="miercoles">Miércoles</button>
+                <button class="day-tab" data-day="jueves">Jueves</button>
+                <button class="day-tab" data-day="viernes">Viernes</button>
+                <button class="day-tab" data-day="sabado">Sábado</button>
+                <button class="day-tab" data-day="domingo">Domingo</button>
+            </div>
+            
+            <!-- Contenido del menú por días -->
+            <div class="menu-content">
+                <!-- Lunes -->
+                <div class="menu-day active" id="lunes">
+                    <div class="menu-category">
+                        <h3 class="category-title">Entradas</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="img/menu/empanadas.jpg" alt="Empanadas de campo">
+                                </div>
+                                <div class="item-details">
+                                    <h4 class="item-name">Empanadas de campo</h4>
+                                    <p class="item-desc">Rellenas con carne de res, huevo, aceitunas y especias</p>
+                                    <span class="item-price">$8.990</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="img/menu/quesos.jpg" alt="Tabla de quesos">
+                                </div>
+                                <div class="item-details">
+                                    <h4 class="item-name">Tabla de quesos artesanales</h4>
+                                    <p class="item-desc">Selección de quesos de la zona con mermelada casera</p>
+                                    <span class="item-price">$12.500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-category">
+                        <h3 class="category-title">Platos Principales</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="img/menu/asado.jpg" alt="Asado de tira">
+                                </div>
+                                <div class="item-details">
+                                    <h4 class="item-name">Asado de tira</h4>
+                                    <p class="item-desc">Corte premium acompañado de papas rústicas y ensalada</p>
+                                    <span class="item-price">$18.900</span>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="img/menu/guiso.jpg" alt="Guiso de lentejas">
+                                </div>
+                                <div class="item-details">
+                                    <h4 class="item-name">Guiso de lentejas campestre</h4>
+                                    <p class="item-desc">Preparado con chorizo, verduras y especias</p>
+                                    <span class="item-price">$14.500</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-category">
+                        <h3 class="category-title">Postres</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-image">
+                                    <img src="img/menu/leche-asada.jpg" alt="Leche asada">
+                                </div>
+                                <div class="item-details">
+                                    <h4 class="item-name">Leche asada</h4>
+                                    <p class="item-desc">Clásico postre de leche caramelizada</p>
+                                    <span class="item-price">$6.900</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Martes (estructura similar) -->
+                <div class="menu-day" id="martes">
+                    <!-- Contenido del menú del martes -->
+                </div>
+                
+                <!-- Miércoles (estructura similar) -->
+                <div class="menu-day" id="miercoles">
+                    <!-- Contenido del menú del miércoles -->
+                </div>
+                
+                <!-- Resto de días... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de especialidades -->
+    <section class="specials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestras Especialidades</h2>
+                <p class="section-subtitle">Platos destacados de la semana</p>
+            </div>
+            
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="img/menu/cazuela.jpg" alt="Cazuela de ave">
+                        <div class="special-badge">Recomendado</div>
+                    </div>
+                    <div class="special-content">
+                        <h3>Cazuela de ave campestre</h3>
+                        <p>Pollo de corral con papas, zapallo, arroz y hierbas</p>
+                        <div class="special-footer">
+                            <span class="price">$16.500</span>
+                            <span class="day">Disponible: Jueves</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="img/menu/cordero.jpg" alt="Cordero al horno">
+                        <div class="special-badge">Especial</div>
+                    </div>
+                    <div class="special-content">
+                        <h3>Cordero al horno de barro</h3>
+                        <p>Pierna de cordero cocida lentamente con hierbas aromáticas</p>
+                        <div class="special-footer">
+                            <span class="price">$22.900</span>
+                            <span class="day">Disponible: Domingo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-image">
+                        <img src="img/menu/pastel.jpg" alt="Pastel de choclo">
+                        <div class="special-badge">Tradicional</div>
+                    </div>
+                    <div class="special-content">
+                        <h3>Pastel de choclo</h3>
+                        <p>Elaborado con choclo fresco, carne y pollo</p>
+                        <div class="special-footer">
+                            <span class="price">$15.900</span>
+                            <span class="day">Disponible: Viernes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página (igual al index) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Bloques del footer (igual que en index.html) -->
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2023 La Esquina del Campo. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="JavaScript/menujs.js"></script>
+</body>
+</html>
