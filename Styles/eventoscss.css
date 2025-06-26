@@ -1,0 +1,324 @@
+/* --------------------------------------------- */
+/* Estilos base y reset */
+/* --------------------------------------------- */
+:root {
+    /* Colores principales */
+    --primary-color: #6B8E23; /* Verde oliva */
+    --secondary-color: #F5DEB3; /* Beige claro */
+    --accent-color: #8B4513; /* Marrón silla de montar */
+    --light-color: #FFF8DC; /* Beige muy claro */
+    --dark-color: #556B2F; /* Verde oliva oscuro */
+    --text-color: #333333;
+    --text-light: #777777;
+    --white: #ffffff;
+    
+    /* Tipografías */
+    --title-font: 'Playfair Display', serif;
+    --text-font: 'Raleway', sans-serif;
+    
+    /* Espaciados */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+    
+    /* Bordes */
+    --border-radius: 8px;
+    --border-radius-lg: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* --------------------------------------------- */
+/* Estilos del encabezado */
+/* --------------------------------------------- */
+.header {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+}
+
+.logo {
+    font-family: var(--title-font);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.nav-list {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: var(--space-sm) 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* --------------------------------------------- */
+/* Estilos del hero (carrusel) */
+/* --------------------------------------------- */
+.hero {
+    margin-top: 80px; /* Compensar el header fijo */
+    position: relative;
+    height: 80vh;
+    max-height: 800px;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease 0.3s;
+}
+
+.slide.active .slide-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-content h2 {
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+.slide-content p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.slider-btn i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.prev-btn {
+    left: var(--space-md);
+}
+
+.next-btn {
+    right: var(--space-md);
+}
+
+.slider-indicators {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-sm);
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background-color: var(--white);
+    transform: scale(1.2);
+}
+
+/* --------------------------------------------- */
+/* Estilos de secciones comunes */
+/* --------------------------------------------- */
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-xxl);
+}
+
+.section-title {
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+/* --------------------------------------------- */
+/* Estilos de la sección "Sobre nosotros" */
+/* --------------------------------------------- */
+.about-section {
+    padding: var(--space-xxl) 0;
+    background-color: var(--white);
+}
+
+.about-content {
+    display: flex;
+    gap: var(--space-xxl);
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: var(--space-md);
+    font-size: 1.1rem;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* --------------------------------------------- */
+/* Estilos de la sección de características */
+/*
